@@ -1,0 +1,10 @@
+driftfile /var/lib/ntp/drift 
+restrict 127.0.0.1
+restrict ::1 
+includefile /etc/ntp/crypto/pw 
+keys /etc/ntp/keys
+disable monitor
+
+<% @servers.each do |server| -%>
+<%= server %>
+<% end -%>
